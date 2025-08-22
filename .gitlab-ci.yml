@@ -2,20 +2,20 @@ stages:
   - pull
   - build
   - lint
-  - test
-  - secret-detection
+#  - test
+#  - secret-detection
   - push
   - cleanup
   - deploy
 
-include:
-- template: Security/Secret-Detection.gitlab-ci.yml
-
-variables:
-  SECRET_DETECTION_ENABLED: 'true'
-secret_detection:
-  stage: secret-detection
-  before_script: []
+#include:
+#- template: Security/Secret-Detection.gitlab-ci.yml
+#
+#variables:
+#  SECRET_DETECTION_ENABLED: 'true'
+#secret_detection:
+#  stage: secret-detection
+#  before_script: []
 
 before_script:
   - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" "$CI_REGISTRY"

@@ -38,27 +38,27 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path("backend/admin/", admin.site.urls),
+    path("cookbook-recipe/backend/admin/", admin.site.urls),
 
-    path('backend/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('cookbook-recipe/backend/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 
     # users
-    path('backend/api/users/', include('customUser.urls')),
+    path('cookbook-recipe/backend/api/users/', include('customUser.urls')),
 
     # auth
-    path('backend/api/auth/', include('authentication.urls')),
+    path('cookbook-recipe/backend/api/auth/', include('authentication.urls')),
 
     # categories
-    path('backend/api/category/', include('category.urls')),
+    path('cookbook-recipe/backend/api/category/', include('category.urls')),
 
     # ingredient
-    path('backend/api/ingredients/', include('ingredient.urls')),
+    path('cookbook-recipe/backend/api/ingredients/', include('ingredient.urls')),
     # recipe
-    path('backend/api/recipes/', include('recipe.urls')),
+    path('cookbook-recipe/backend/api/recipes/', include('recipe.urls')),
     # cookbook
-    path('backend/api/cookbooks/', include('cookbook.urls')),
+    path('cookbook-recipe/backend/api/cookbooks/', include('cookbook.urls')),
     # ai
-    path('backend/api/ai/', include('generate_recipe.urls'))
+    path('cookbook-recipe/backend/api/ai/', include('generate_recipe.urls'))
 ]
 
 if settings.DEBUG:

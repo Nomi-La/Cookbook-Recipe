@@ -30,13 +30,15 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '165.22.79.53',
-    'cookbook.nomilang.ch'
+    'nomilang.ch',
+    "www.nomilang.ch"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:5173',
-    'https://cookbook.nomilang.ch',
-    'https://165.22.79.53'
+    'https://nomilang.ch',
+    'https://165.22.79.53',
+    'https://www.nomilang.ch',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -146,11 +148,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = '/static-files/'  # URL prefix for static files
+STATIC_URL = '/cookbook-recipe/static-files/'  # URL prefix for static files
 # STATIC_URL = '/static-files/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-files') if DEBUG else '/static-files/'
 
-MEDIA_URL = '/media-files/'
+MEDIA_URL = '/cookbook-recipe/media-files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media-files') if DEBUG else '/media-files/'
 
 # Default primary key field type
